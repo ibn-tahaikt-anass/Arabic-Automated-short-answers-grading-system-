@@ -1,0 +1,64 @@
+<div style="font-family:'Amiri', serif;" >
+  <div class="firstContainer">
+  <div class="container mb-5 ">
+    <!------------------------------------------- قسم التعليمات ----------------------------------------------------->
+    <div class="d-flex justify-content-center align-items-center " *ngIf="isInstructionsVisible ">
+        <div class="container-fluid">
+        <div class="row justify-content-center">
+    
+          <div class="col-md-9">
+            <h1 class="row justify-content-right mt-4  text-danger" style="direction: rtl; font-size:3em;">تعليمات مهمة!</h1>
+              <p class="mb-4 mt-4 fs-5" style="direction: rtl;">عزيزي الطالب، <br>
+    
+                يرجى قراءة تعليمات الاختبار عبر الإنترنت قبل بدء الاختبار.</p>
+                <div class="row justify-content-center align-items-center ">
+              <h3 class="text-success row justify-content-right align-items-center" style="direction: rtl;">تعليمات الاختبار:</h3>
+              <ol class="row justify-content-center align-items-center fs-5" style="direction: rtl;">
+                <li class="my-3">هناك 10 أسئلة بإجابة قصيرة بالمجمل.</li>
+                <li class="my-3">يجب عليك الإجابة على كل سؤال قبل المضي إلى السؤال التالي.</li>
+                <li class="my-3">سيتم حفظ إجابتك تلقائيًا عند النقر على زر "السؤال التالي".</li>
+                <li class="my-3">بمجرد تقديم إجابة لسؤال، لن تتمكن من العودة إليه مرة أخرى.</li>
+              </ol>
+              <div class="col-md-6 float-right" >
+              <h4 class=" text-success fs-2 " style="direction: rtl;">كل التوفيق</h4>
+              <button type="submit" class="btn px-5 py-3 mt-1" (click)=" startQuiz();fetchQuestions()" style="direction: rtl; font-size:20px; background-color: rgb(77, 65, 148); color: #fff">بدء</button>
+            </div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <!---------------------------------------------Test Section *ngFor="let question of questions ------------------------------------------------------------------>
+    <div class="container mb-5 ">
+    <div class="col-md-12 " *ngIf="isTestVisible">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <form (ngSubmit)="submitAnswer()" class="">
+            <div class="card card-margin bg-light my-3 px-4">
+              <div class="form-group">
+                <label class="mt-4 mb-4 fs-3 text-primary bg-light text-dark row justify-content-center align-items-center">
+                  <p style="direction: rtl; text-align: right;">السؤال {{ currentQuestionIndex + 1 }}: {{ currentQuestion?.text_question }}؟ </p>
+                </label>
+                <textarea class="form-control mb-4 fs-3" type="text" name="text_answer" style="direction: rtl;" [(ngModel)]="currentAnswer.text_answer" rows="3" dir="rtl"></textarea>
+              </div>
+              <div class="col-md-6 float-center">
+                <button type="submit" class="btn btn-lg px-3 mb-2 float-center" style="direction: rtl; font-size:20px; background-color: rgb(77, 65, 148); color: #fff">السؤال التالي</button>
+              </div>
+            </div>
+          </form>
+          
+          
+  </div>
+  </div>
+  </div>
+  
+  <!-----------------------------------------------Finished Test -------------------------------------------------------------------------->
+  <div *ngIf="isFinished" class="mt-5 text-center"> 
+    <div class="alert alert-info mb-3 mt-3 py-5 " role="alert">
+      <h2 class="mb-3 text-danger">تهانينا، لقد انتهيت من الاختبار!</h2>
+       <p class="lead mb-5">انقر على الزر أدناه لعرض درجتك والإجابات الخاصة بك.</p> 
+       <button class="btn btn-light px-3 fs-5" [routerLink]="['/review']">عرض الدرجة والإجابات <i class="fas fa-clipboard-check"></i>
+      </button> </div>
+     </div>
+    </div>
+  </div>

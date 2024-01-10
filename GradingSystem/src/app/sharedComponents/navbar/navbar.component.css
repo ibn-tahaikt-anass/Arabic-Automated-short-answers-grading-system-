@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
+  /* font-family: 'Amiri', serif; */
+
+navbar {
+    position: fixed;
+    top: 0;
+    color: white;
+    width: 100vw;
+    z-index: 99;
+    height: 80px;
+    border: 0;
+    transition: background-color 0.5s, border 0.5s, height 0.5s ease-out;
+    font-family:'Amiri',serif;
+    }
+    ul,li{
+    color: white;
+    font-size: large;
+    font-weight: 100;
+      }
+li:focus{
+  border-bottom: 3;
+  color: rgb(222, 123, 123);
+  background-color: antiquewhite;
+}
+.small-image {
+  width: 160px; /* Adjust the width as needed */
+  height: 100px;
+  padding-right: 30px; /* Maintain aspect ratio */
+}

@@ -1,0 +1,21 @@
+* {
+  font-family: 'Amiri', serif;
+  letter-spacing: 2px;
+  font-weight: bold;
+  
+}
+
+.firstContainer {
+  background-size: cover;
+  background-image: url('../../../assets/pen.jpg');
+  background-position: center;
+  height: 100vh; /* Adjust the height based on your design preferences */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-height {
+    height: 50vh;
+  }
+

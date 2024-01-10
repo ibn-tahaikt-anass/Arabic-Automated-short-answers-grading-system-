@@ -1,0 +1,42 @@
+<div style="font-family:'Amiri', serif;" >
+<nav class="navbar navbar-expand-sm sticky-top text-light py-0 bg-gradient" style="background-color:rgb(77, 65, 148);" >
+  <div class="container " >
+    <a class="navbar-brand  text-white x-4 fs-3 mx-3 fw-semibold" href="#" id="main-logo">
+      <img src="../../../assets/logo2.png" class="small-image" alt="quizz Logo ">
+    
+      </a>
+    <ul class="navbar-nav ms-auto my-lg-1 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+      <li class="nav-item">
+        <a class="nav-link active me-4  text-white fs-5 fw-semibold" aria-current="page" [routerLink]="['']">الصفحة الرئيسية</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active px-4 text-white fs-5  fw-semibold" [routerLink]="['/exam']">التدريب</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active px-4 text-white fs-5  fw-semibold" [routerLink]="['/exam']">الامتحان</a>
+      </li>
+      </ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse"   id="main-menu">
+      <ul class="navbar-nav ms-auto my-lg-1 navbar-nav-scroll" style="--bs-scroll-height: 90px;">
+        
+          <!-- Authentication Links -->
+                  <li class="nav-item">
+                      <a class="nav-link me-4 text-white fs-5  fw-semibold" [routerLink]="['/login']">تسجيل الدخول</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link me-4 text-white fs-5  fw-semibold"  [routerLink]="['/register']">انشئ حسابك الان</a>
+                  </li>
+  
+     
+            
+      
+      </ul>
+  
+     
+    </div>
+  </div>
+</nav>  
+</div>
